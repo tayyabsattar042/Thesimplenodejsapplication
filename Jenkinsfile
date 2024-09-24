@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'pwd && ls -la'
                 sh 'cd /home/tayyab/taskss && git pull && pm2 restart app'
             }
         }      

@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run PM2') {
             steps {
-                sh 'pm2 restart app'
+                sh 'bash -ic /usr/local/bin/node pm2 restart app'
             }
         }
       

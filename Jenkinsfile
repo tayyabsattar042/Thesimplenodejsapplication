@@ -10,7 +10,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '/var/www/html/simplenodejsapplication/'
-'
             }
         }
         stage('Run PM2') {

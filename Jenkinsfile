@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run PM2') {
             steps {
-                sh 'pm2 restart all --update-env'
+                sh 'pm2 restart app --update-env'
             }
         }
       

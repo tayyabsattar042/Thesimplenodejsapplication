@@ -8,7 +8,7 @@ pipeline {
                     // Change directory to the application folder
                     dir('/var/www/html/simplenodejsapplication') {
                         // Pull the latest changes from the repository
-                        sh 'git pull origin main || echo "Failed to pull from git"'
+                        sh 'git pull origin master || echo "Failed to pull from git"'
                     }
                 }
             }

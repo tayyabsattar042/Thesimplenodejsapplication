@@ -1,23 +1,22 @@
 pipeline {
     agent any
+
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    dir ('/var/www/html/simplenodejsapplication') {
-                        sh 'git pull origin master'
-                    }
-                }
+                git url: 'https://github.com/tayyabsattar042/Thesimplenodejsapplication.git'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'cp -r /var/lib/jenkins/workspace/simplenodejsapplicationn/app.js /var/www/html/simplenodejsapplication/'
             }
         }
         stage('Run PM2') {
             steps {
-                script {
-                    dir ('/var/www/html/simplenodejsapplication') {
-                        sh 'pm2 restart app'
-                    }
-                }
+                sh 'bash -ic /usr/local/bin/node pm2 restart app'
             }
         }
+      
     }
 }

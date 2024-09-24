@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Run PM2') {
             steps {
-                sh 'pm2 restart all'
+                sh 'pm2 restart app.js'
             }
         }
       

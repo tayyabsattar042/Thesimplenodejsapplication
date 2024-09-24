@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'sudo cp -r /var/lib/jenkins/workspace/simplenodejsapplicationn/* /var/www/html/simplenodejsapplication/'
+                sh 'cp -r /var/lib/jenkins/workspace/simplenodejsapplicationn/* /var/www/html/simplenodejsapplication/'
             }
         }
         stage('Run PM2') {

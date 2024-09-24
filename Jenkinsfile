@@ -4,8 +4,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    cd ('/var/www/html/simplenodejsapplication') {
-                        sh 'git pull origin master || echo "Failed to pull from git"'
+                    dir ('/var/www/html/simplenodejsapplication') {
+                        sh 'git pull origin master'
                     }
                 }
             }
@@ -13,7 +13,7 @@ pipeline {
         stage('Run PM2') {
             steps {
                 script {
-                    cd ('/var/www/html/simplenodejsapplication') {
+                    dir ('/var/www/html/simplenodejsapplication') {
                         sh 'pm2 restart app'
                     }
                 }

@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '/var/www/html/simplenodejsapplication/
+                sh '/var/www/html/simplenodejsapplication/'
 '
             }
         }
